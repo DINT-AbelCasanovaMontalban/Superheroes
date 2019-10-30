@@ -46,8 +46,8 @@ class Superheroe : INotifyPropertyChanged
         }
     }
 
-    private string _vengador;
-    public string Vengador
+    private bool _vengador;
+    public bool Vengador
     {
         get { return this._vengador; }
         set

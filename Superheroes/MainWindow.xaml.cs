@@ -20,9 +20,19 @@ namespace Superheroes
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Superheroe superheroe;
+
         public MainWindow()
         {
             InitializeComponent();
+            superheroe = Superheroe.GetSample();
+            GridBot.DataContext = superheroe;
+            fotoImage.DataContext = superheroe;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            NombreTextBox.SetBinding(TextBox.TextProperty, superheroe.Nombre);
         }
     }
 }
