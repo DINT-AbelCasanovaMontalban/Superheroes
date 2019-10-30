@@ -32,7 +32,11 @@ namespace Superheroes
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            NombreTextBox.SetBinding(TextBox.TextProperty, superheroe.Nombre);
+            GridRight.DataContext = superheroe;
+            Binding b = new Binding(superheroe.Nombre);
+            b.Mode = BindingMode.TwoWay;
+            NombreTextBox.SetBinding(TextBox.TextProperty,b);
+            
         }
     }
 }
